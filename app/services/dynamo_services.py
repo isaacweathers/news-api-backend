@@ -2,8 +2,8 @@ import boto3
 from botocore.exceptions import ClientError
 
 # Initialize DynamoDB resource
-dynamodb = boto3.resource("dynamodb", region_name="us-east-1")
-table = dynamodb.Table("Articles")  # Replace "Articles" with your table name
+dynamodb = boto3.resource("dynamodb", region_name="us-east-2")
+table = dynamodb.Table("Articles4")  # Replace "Articles" with your table name
 
 def delete_article(article_id: str, version: str = "VERSION#1"):
     try:

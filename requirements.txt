@@ -1,4 +1,5 @@
-boto3==1.28.0
-botocore==1.31.85
-fastapi==0.115.7
-pydantic==1.10.21
+fastapi==0.95.0
+uvicorn==0.22.0
+boto3==1.28.0        # AWS SDK for Python
+pydantic>=1.10.0     # Data validation
+python-dotenv==1.0.0 # For local environment variables
