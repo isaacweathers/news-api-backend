@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from app.routers import articles
 from fastapi.middleware.cors import CORSMiddleware
@@ -5,10 +6,12 @@ from fastapi.middleware.cors import CORSMiddleware
 # Initialize FastAPI app
 app = FastAPI()
 
+FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:8080")  # Default to localhost for dev
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Frontend origin
+    allow_origins=["http://localhost:8080"],  # Frontend origin
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers
